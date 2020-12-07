@@ -3,5 +3,7 @@ Built for navigating ableton's session view as a 2D array using only two buttons
 
 Also includes a script for doing MIDI-mapping between the controller and ableton. 
 
+![fig](fig.gif)
+
 ## Requirements
 collections.deque and rtmidi 
