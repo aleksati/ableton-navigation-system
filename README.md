@@ -3,8 +3,8 @@ Built for navigating ableton's session view as a 2D array using only two buttons
 
 Also includes a script for doing MIDI-mapping between the controller and ableton. 
 
-<p align="left!>
- <img src="fig.gif" width=640>
+<p align="left">
+ <img src="fig.gif" width=440>
 </p>
 
 ## Requirements
