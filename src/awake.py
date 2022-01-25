@@ -1,6 +1,6 @@
-#This program is designed to dynamically arm different MIDI-instruments
-#based on their designated Ableton Scene. Also, we send out any other CC Midi from 
-#the MIDI-keyboard to ableton for mapping.
+#This script dynamically arms MIDI-instruments (on a midi-event) based on their designated Ableton Scene (scene_config). 
+#Also, we send out any other CC Midi from MIDI-keyboard to ableton for mapping.
+
 import rtmidi
 from collections import deque
 import utils
