@@ -1,5 +1,5 @@
 # Matrix MIDI Navigation
-Navigates ableton's session view as a 2D array with only two buttons (for X and Y) on my MIDI-controller. The real benefit is that it assosiates every MIDI track with a designated a scene, ensuring fast navigation. Perfect for live use. Also includes a script for doing MIDI-mapping between the controller and ableton.
+Navigate ableton's session view as a 2D array using MIDI and assosiate individual tracks with designated scenes to enable super fast navigation (precise skipping). Perfect for live use. Also includes a script for doing MIDI-mapping between the controller and ableton.
 
 <p align="center">
  <img src="img/main.gif" width=600>
@@ -21,5 +21,5 @@ In Ableton Live 11, use the following MIDI config.
 ### use
 .. coming soon ..
 
-# Python Requirements
+# Requirements
 collections.deque and rtmidi
