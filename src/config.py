@@ -6,12 +6,12 @@ SCENE_CONFIG = {
 
 ####### MIDI KEYBOARD INFO ########
 ####### RUN "keyboard-config.py" TO FIND CORRECT VALUES ######## 
-SYNTH_NOTE = 176 #the note number of the button that triggers a new synth.
+SYNTH_NOTE = 68 #the note number of the button that triggers a new synth.
 SCENE_NOTE = 57 #the note number of the button that trigger the next scene.
 
-VOLUME_NOTE = 20 #the note number of the dial that control the volume
-LOWPASS_NOTE = 74 #the note number of the dial that control the lowpass filtering
-REVERB_NOTE = 107 #the note number of the dial that controls the reverb amount 
+VOLUME_NOTE = 7 #the note number of the dial that control the volume
+LOWPASS_NOTE = 10 #the note number of the dial that control the lowpass filtering
+REVERB_NOTE = 11 #the note number of the dial that controls the reverb amount 
 
 START_NOTE = 66 #the note number of the button that toggles start
 STOP_NOTE = 65 #the note number of the button that toggles stop

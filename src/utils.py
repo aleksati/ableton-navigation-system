@@ -2,6 +2,8 @@ import rtmidi
 import config
 
 def initialize_midi():
+    print('\n')
+
     print('Available MIDI input ports:')
     midi_in = rtmidi.MidiIn()
     for port, name in enumerate(midi_in.get_ports()):
