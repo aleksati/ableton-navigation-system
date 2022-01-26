@@ -1,3 +1,4 @@
+# FIXME: If synths are 0 indexed, then scenes should also be. or the other way around.
 SCENE_CONFIG = {
     1 : [0, 1, 0],
     2 : [2, 0, 2],
