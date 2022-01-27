@@ -25,13 +25,12 @@ def initialize_midi():
 
     return midi_in_opened, midi_out_opened
 
-#FIXME: No need to overcomplicate this. Presume arm exclusive.
-#skip to the next synth and turn off the last synth that was enabled
 def synth_skip(gen1, gen2, message, curr_scene, midi_out):
     #Enable first synth in scene and create desired offset between on/off (gen_scene1 and gen_scene2).
+    #returns the current synth value
     if message[2] == config.NOTE_OFF:
         if len(config.SCENE_CONFIG[curr_scene]) > 1:
-            message[2], message[1] = config.NOTE_ON, next(gen2)
+            message[2], message[1] = config.NOTE_OFF, next(gen2)
             midi_out.send_message(message)
         else:
             pass
@@ -39,7 +38,7 @@ def synth_skip(gen1, gen2, message, curr_scene, midi_out):
         note = next(gen1)
         message[1] = note
         midi_out.send_message(message)
-
+         
         return int(note)
 
 #increment the synth value in the current scene

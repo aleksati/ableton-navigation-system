@@ -13,7 +13,6 @@ curr_synth = 0
 curr_scene = 0
 synth = False
 
-print('Ready!')
 while True:
     if init_count != 0:
         message = midi_in.get_message()
@@ -58,5 +57,7 @@ while True:
             else:
                 #Send out any other info from the correct channel. So to control volume, start/stop etc.
                  midi_out.send_message(message)
+        else:
+            midi_out.send_message(message)
 
     init_count = 1   
