@@ -45,10 +45,11 @@ To see the MIDI values from your own setup, run the *keyboard-test.py*, use your
 The SCENE_CONFIG defines what synths are used in what scene, and in which order. For instance, in scene nr.3 above, we switch from synth nr.2, to 3, to 1, to 3 and back to 2, if we continuously press the button associated with the SYNTH_NOTE value.
 
 ### MIDI DAW Settings
-Run the virtual MIDI port and set the following MIDI config in your DAW.
-<p align="center">
+Run the virtual MIDI port and set the following MIDI config in your DAW:
+<p align="left">
  <img src="img/ableton-midi-pref.jpg" width=400>
 </p>
+All midi will come from our virtual MIDI port. 
 
 # How to Use
 ### MIDI Mapping
