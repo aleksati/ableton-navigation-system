@@ -1,7 +1,7 @@
 # Matrix MIDI Navigation
 Navigate ableton's session view as a 2D array using MIDI and assosiate individual tracks with designated scenes to enable super fast navigation (precise skipping). Perfect for live use. Also includes a script for doing MIDI-mapping between the controller and ableton.
 
-<p align="center">
+<p align="left">
  <img src="img/main.gif" width=600>
 </p>
 
@@ -9,7 +9,7 @@ Navigate ableton's session view as a 2D array using MIDI and assosiate individua
 ### Virtual MIDI Port
 You need to create a virtual MIDI port that will sit between the python rtMIDI and your DAW. On Mac, use the IAC Driver and setup a designated IAC bus. On Windows, I recommend using [Tobias Erichsen's loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html).
 
-<p align="center">
+<p align="left">
  <img src="img/overview.png" width=600>
 </p>
 
