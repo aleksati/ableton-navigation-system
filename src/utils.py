@@ -1,7 +1,8 @@
 import rtmidi
 import config
 
-def initialize_midi():
+#init the midi objects
+def midi_INIT():
     print('\n')
 
     print('Available MIDI input ports:')
@@ -25,25 +26,28 @@ def initialize_midi():
 
     return midi_in_opened, midi_out_opened
 
-def synth_skip(gen1, gen2, message, curr_scene, midi_out):
-    #Enable first synth in scene and create desired offset between on/off (gen_scene1 and gen_scene2).
-    #returns the current synth value
-    if message[2] == config.NOTE_OFF:
-        if len(config.SCENE_CONFIG[curr_scene]) > 1:
-            message[2], message[1] = config.NOTE_OFF, next(gen2)
-            midi_out.send_message(message)
-        else:
-            pass
-    else:
-        note = next(gen1)
-        message[1] = note
-        midi_out.send_message(message)
-         
-        return int(note)
+#init the program
+def program_INIT():
+    message = [[config.MIDI_CHAN, config.SCENE_NOTE, config.NOTE_ON], 127]
+    curr_synth = 0
+    curr_scene = 0
+    init = True
+    print("Ready!")
+    print("\n")
+    return message, init, curr_synth, curr_scene
 
-#increment the synth value in the current scene
-#and loop back to start when necessary. 
-def synth_increment(synth_trigger_note, scene):
+#turn a synth on
+def synth_ON(synth_val, midi_out):
+    midi_out.send_message([config.MIDI_CHAN, synth_val, config.NOTE_ON])
+    print("Synth", synth_val, "ON")
+
+#turn a synth off
+def synth_OFF(synth_val, midi_out):
+    midi_out.send_message([config.MIDI_CHAN, synth_val, config.NOTE_OFF])
+    print("Synth", synth_val, "OFF")
+
+#create a generator object that loops through the synth values in a scene and loop back to start when necessary. 
+def synth_INIT(synth_trigger_note, scene):
     this_scene = config.SCENE_CONFIG[scene]
     count = 0
     while True:
@@ -53,16 +57,22 @@ def synth_increment(synth_trigger_note, scene):
         else:
             count = 0
 
+#jump to the next scene
+def scene_NEXT(scene_trigger_note, curr_scene, midi_out):
+    scene = scene_trigger_note+(curr_scene-1)
+    midi_out.send_message([config.MIDI_CHAN, scene, config.NOTE_ON])
+    print('Scene', curr_scene)
 
+#increment the scene count and loop back to start when necessary
 def scene_increment(curr_scene):
     if curr_scene < len(config.SCENE_CONFIG):
         return curr_scene+1
     else:
         return 1
 
-#Offset the synth and scene trigger midi-values so we ensure support for large number of synths and scenes. 
-#If not, then constantly incrementing the MIDI message might trigger other unwanted stuff. 
-def note_offset():
+#offset the synth and scene trigger values (defined in config) so we ensure support for large number of synths and scenes. 
+#if not, then constantly incrementing the MIDI message might trigger other unwanted stuff. 
+def gen_note_offset():
     synth_count=[]
     for i in range(len(config.SCENE_CONFIG)):
         #remove duplicate synth from the config dict
@@ -74,7 +84,7 @@ def note_offset():
             else:
                 synth_count.append(elem)
 
-    synth_note_mod = config.HIGH_NOTE-(len(config.SCENE_CONFIG)+len(synth_count)) 
-    scene_note_mod = synth_note_mod+len(synth_count)
+    synth_trigger_note = config.HIGH_NOTE-(len(config.SCENE_CONFIG)+len(synth_count)) 
+    scene_trigger_note = synth_trigger_note+len(synth_count)
 
-    return len(synth_count), synth_note_mod, scene_note_mod
+    return len(synth_count), synth_trigger_note, scene_trigger_note
