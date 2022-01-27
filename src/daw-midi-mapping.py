@@ -1,10 +1,8 @@
 import utils
 import config
 
-#Offset the the desired CC messages so they dont trigger other stuff (like start and stop)
-#Also, ensure the possibility of having a larger number of scenes and synths
-synth_numb, synth_note_mod, scene_note_mod = utils.note_offset()
-midi_in, midi_out = utils.initialize_midi()
+synth_numb, synth_trigger_note, scene_trigger_note = utils.gen_note_offset()
+midi_in, midi_out = utils.midi_INIT()
 
 scene_numb = len(config.SCENE_CONFIG)
 scene_count = 1
@@ -15,8 +13,8 @@ with midi_out:
     while scene_count <= scene_numb:
         inn = input(f"Toggle scene {scene_count}, THEN press y to continue: ")
         if inn == "y":
-            midi_out.send_message([config.MIDI_CHAN, scene_note_mod, config.NOTE_ON])
-            scene_note_mod += 1
+            midi_out.send_message([config.MIDI_CHAN, scene_trigger_note, config.NOTE_ON])
+            scene_trigger_note += 1
             scene_count += 1
         else:
             print("Scene config halted")
@@ -26,8 +24,8 @@ with midi_out:
     while synth_count <= synth_numb: 
         inn = input(f"Toggle synth {synth_count-1}, THEN press y to continue: ")
         if inn == "y":
-            midi_out.send_message([config.MIDI_CHAN, synth_note_mod, config.NOTE_ON])
-            synth_note_mod += 1
+            midi_out.send_message([config.MIDI_CHAN, synth_trigger_note, config.NOTE_ON])
+            synth_trigger_note += 1
             synth_count += 1
         else:
             print("Synth config halted")
