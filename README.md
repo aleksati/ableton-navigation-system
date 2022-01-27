@@ -40,12 +40,14 @@ NOTE_OFF = 0 #the note-off MIDI value
 #this value defines the highest possible note we can use for triggering events. all our events will occur just below this value.
 HIGH_NOTE = 120
 ```
-To find these values on your own system, you can run the *keyboard-test.py* and use your MIDI-keyboard. The midi-values of your keybiard will be printed on the console. The SCENE_CONFIG defines what synths are used in what scene, and in which order. For instance, in scene nr.3 above, we switch from synth nr.2, to 3, to 1, to 3 and back to 2, if we continousy press the button associated with the SYNTH_NOTE value.
+To see the MIDI values from your own setup, run the *keyboard-test.py*, use your MIDI-keyboard and see the MIDI-values printed on the console. 
+
+The SCENE_CONFIG defines what synths are used in what scene, and in which order. For instance, in scene nr.3 above, we switch from synth nr.2, to 3, to 1, to 3 and back to 2, if we continuously press the button associated with the SYNTH_NOTE value.
 
 ### MIDI DAW Settings
 Run the virtual MIDI port and set the following MIDI config in your DAW.
 <p align="center">
- <img src="img/ableton-midi-pref.png" width=600>
+ <img src="img/ableton-midi-pref.png" width=400>
 </p>
 
 # How to Use
