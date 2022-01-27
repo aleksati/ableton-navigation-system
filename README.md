@@ -47,7 +47,7 @@ The SCENE_CONFIG defines what synths are used in what scene, and in which order.
 ### MIDI DAW Settings
 Run the virtual MIDI port and set the following MIDI config in your DAW.
 <p align="center">
- <img src="img/ableton-midi-pref.png" width=400>
+ <img src="img/ableton-midi-pref.jpg" width=400>
 </p>
 
 # How to Use
