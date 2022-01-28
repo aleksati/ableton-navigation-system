@@ -10,7 +10,7 @@ Navigate Ableton Live's session view as a 2D array and assosiate specific tracks
 You need to create a virtual MIDI port that will sit between the python rtMIDI and your DAW. On Mac, use the IAC Driver and setup a designated IAC bus. On Windows, I recommend using [Tobias Erichsen's loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html).
 
 <p align="left">
- <img src="img/overview.png" width=600>
+ <img src="img/overview.png" width=400>
 </p>
 
 ### Config.py
