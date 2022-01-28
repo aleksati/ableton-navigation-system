@@ -45,7 +45,7 @@ To see the MIDI values from your own setup, run the *keyboard-test.py*, use your
 The SCENE_CONFIG defines what synths are used in what scene, and in which order. For instance, in scene nr.3 above, we switch from synth nr.2, to 3, to 1, to 3 and back to 2, if we continuously press the button associated with the SYNTH_NOTE value.
 
 ### Ableton MIDI Settings
-Run the virtual MIDI port and enable it to track and remote control. Disable your keybords native MIDI-port. If not, it will cause conflicts.
+Run the virtual MIDI port and enable it to track and remote control your DAW. Disable your keybords native MIDI-port. If not, there will be conflicts.
 <p align="left">
  <img src="img/ableton-midi-pref.jpg" width=400>
 </p>
