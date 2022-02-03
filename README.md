@@ -1,5 +1,5 @@
 # Matrix MIDI Navigation
-Navigate Ableton Live's session view as a 2D array and assosiate specific tracks with specific scenes for super fast navigation (precise skipping). Also includes a script for semi-automatic midi-mapping.
+Navigate Ableton Live's session view as a 2D array and associate specific tracks with specific scenes for super fast navigation (precise skipping). Also includes a script for semi-automatic midi-mapping.
 
 <p align="left">
  <img src="img/main.gif" width=auto>
