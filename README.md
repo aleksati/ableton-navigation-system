@@ -1,5 +1,5 @@
 # Overview
-Navigate Ableton Live's session view as a 2D matrix using as few MIDI control signals as possible (two buttons; one for scene skipping and one for synth skipping). The scripts work by associating individual MIDI tracks with specific scenes, enabling very fast "skipping" between synths and scenes in Abelton, making them ideal for live performance setting. Also includes a script for semi-automatic midi-mapping and custom configuration.
+Navigate Ableton Live's session view as a 2D matrix using as few MIDI control signals as possible (two buttons; one for scene skipping and one for synth skipping). The scripts work by associating individual MIDI tracks with specific scenes in Ableton, enabling very fast "skipping" between synths and scenes, making them ideal for live performance.
 
 <p align="left">
  <img src="img/main.gif" width=auto>
