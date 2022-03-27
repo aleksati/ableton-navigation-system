@@ -1,11 +1,27 @@
+# synth 0 = OpenBass
+# synth 1 = ArpBass
+# synth 2 = Brass
+# synth 3 = LongBass
+# synth 4 = Laat5Intro
+# synth 5 = SunLead
+# synth 6 = BladeLead
+# synth 7 = OrganBass
+
 SCENE_CONFIG = {
-    1 : [1, 2, 0, 3],
-    2 : [2, 0],
-    3 : [2, 3, 1, 3]
+    1 : [0, 1, 0], # Laat 1
+    2 : [2, 3, 2, 3, 2], # Laat 2
+    3 : [2, 3, 1, 3], # Laat 3
+    4 : [2, 5], # Laat 4 - Intro og solo
+    5 : [2], # Laat 4 - Outro 
+    6 : [4], # Laat 5 - Intro
+    7 : [3], # Laat 5 - Refreng 
+    8 : [3, 4, 3, 5], # Laat 5 - Bridge and out
+    9 : [6, 7, 6, 1, 6], # Laat 6
+    10: [7, 1, 7], # Laat 8
 }
 
 ####### MIDI KEYBOARD INFO ########
-####### RUN "keyboard-config.py" TO FIND CORRECT VALUES ######## 
+####### RUN "keyboard-test.py" TO FIND CORRECT VALUES ######## 
 SYNTH_NOTE = 68 #the note number of the button that triggers a new synth.
 SCENE_NOTE = 57 #the note number of the button that trigger the next scene.
 
