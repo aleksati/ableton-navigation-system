@@ -8,16 +8,16 @@
 # synth 7 = OrganBass
 
 SCENE_CONFIG = {
-    1 : [0, 1, 0], # Laat 1
-    2 : [2, 3, 2, 3, 2], # Laat 2
+    1 : [0, 1], # Laat 1
+    2 : [2, 3, 2, 3], # Laat 2
     3 : [2, 3, 1, 3], # Laat 3
     4 : [2, 5], # Laat 4 - Intro og solo
     5 : [2], # Laat 4 - Outro 
     6 : [4], # Laat 5 - Intro
     7 : [3], # Laat 5 - Refreng 
     8 : [3, 4, 3, 5], # Laat 5 - Bridge and out
-    9 : [6, 7, 6, 1, 6], # Laat 6
-    10: [7, 1, 7], # Laat 8
+    9 : [6, 7, 6, 1], # Laat 6
+    10: [7, 1], # Laat 8
 }
 
 ####### MIDI KEYBOARD INFO ########

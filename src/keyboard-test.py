@@ -2,7 +2,7 @@ import utils
 
 # just prints out the midi messages from your device to the console.
 # Use this to setup config.py
-midi_in, midi_out = utils.initialize_midi()
+midi_in, midi_out = utils.midi_INIT()
 with midi_in:
     prev_message = []
     while True:
