@@ -1,3 +1,4 @@
+import os
 import rtmidi
 import config
 
@@ -33,18 +34,18 @@ def program_INIT():
     curr_scene = 0
     init = True
     print("Ready!")
-    print("\n")
     return message, init, curr_synth, curr_scene
 
 #turn a synth on
-def synth_ON(synth_val, midi_out):
+def synth_ON(synth_trigger_note, synth_val, midi_out):
     midi_out.send_message([config.MIDI_CHAN, synth_val, config.NOTE_ON])
-    print("Synth", synth_val, "ON")
+    print ("\033[A                             \033[A")
+    print("Synth", getKeyFromVal(config.SYNTH, synth_val - synth_trigger_note))
 
 #turn a synth off
-def synth_OFF(synth_val, midi_out):
+def synth_OFF(synth_trigger_note, synth_val, midi_out):
     midi_out.send_message([config.MIDI_CHAN, synth_val, config.NOTE_OFF])
-    print("Synth", synth_val, "OFF")
+    #print("Synth", getKeyFromVal(config.SYNTH, synth_val), "OFF")
 
 #create a generator object that loops through the synth values in a scene and loop back to start when necessary. 
 def synth_INIT(synth_trigger_note, scene):
@@ -61,7 +62,9 @@ def synth_INIT(synth_trigger_note, scene):
 def scene_NEXT(scene_trigger_note, curr_scene, midi_out):
     scene = scene_trigger_note+(curr_scene-1)
     midi_out.send_message([config.MIDI_CHAN, scene, config.NOTE_ON])
-    print('Scene', curr_scene)
+    os.system("cls")
+    print(getKeyFromVal(config.SCENE, curr_scene))
+    print("/n")
 
 #increment the scene count and loop back to start when necessary
 def scene_increment(curr_scene):
@@ -88,3 +91,7 @@ def gen_note_offset():
     scene_trigger_note = synth_trigger_note+len(synth_count)
 
     return len(synth_count), synth_trigger_note, scene_trigger_note
+
+# Used to print the synth name from SYNTH dict in config
+def getKeyFromVal(my_dict, val): 
+    return list(my_dict.keys())[list(my_dict.values()).index(val)]

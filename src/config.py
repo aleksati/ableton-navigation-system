@@ -1,29 +1,50 @@
-# synth 0 = OpenBass
-# synth 1 = ArpBass
-# synth 2 = Brass
-# synth 3 = LongBass
-# synth 4 = Laat5Intro
-# synth 5 = SunLead
-# synth 6 = BladeLead
-# synth 7 = OrganBass
+SYNTH = {
+    "ArpBass": 1,
+    "Brass": 2,
+    "Bass": 3, 
+    "Laat5Intro": 4,
+    "Sun": 5,
+    "Blade": 6,
+    "OrgelBass": 7,
+}
 
+SCENE = {
+    "Laat 1 - Scene 1" : 1,
+    "Laat 2 - Scene 2" : 2,
+    "Laat 3 - Scene 3" : 3,
+    "Laat 4 - Scene 4" : 4,
+    "Laat 4 - Scene 5" : 5, 
+    "Laat 4 - Scene 6" : 6,
+    "Laat 4 - Scene 7" : 7,
+    "Laat 5 - Scene 8" : 8,
+    "Laat 5 - Scene 9" : 9,
+    "Laat 5 - Scene 10" : 10,
+    "Laat 6 - Scene 11" : 11,
+    "Laat 7 - Scene 12" : 12, 
+    "Laat 8 - Scene 13" : 13, 
+}
+
+# scene : synths
 SCENE_CONFIG = {
-    1 : [0, 1], # Laat 1
-    2 : [2, 3, 2, 3], # Laat 2
-    3 : [2, 3, 1, 3], # Laat 3
-    4 : [2, 5], # Laat 4 - Intro og solo
-    5 : [2], # Laat 4 - Outro 
-    6 : [4], # Laat 5 - Intro
-    7 : [3], # Laat 5 - Refreng 
-    8 : [3, 4, 3, 5], # Laat 5 - Bridge and out
-    9 : [6, 7, 6, 1], # Laat 6
-    10: [7, 1], # Laat 8
+    SCENE["Laat 1 - Scene 1"] : [SYNTH["Bass"], SYNTH["ArpBass"]], # Laat 1
+    SCENE["Laat 2 - Scene 2"] : [SYNTH["Brass"], SYNTH["Bass"], SYNTH["Brass"], SYNTH["Bass"]], # Laat 2
+    SCENE["Laat 3 - Scene 3"] : [SYNTH["Brass"], SYNTH["Bass"], SYNTH["ArpBass"], SYNTH["Bass"]], # Laat 3
+    SCENE["Laat 4 - Scene 4"] : [SYNTH["Brass"]], # Laat 4 - Intro
+    SCENE["Laat 4 - Scene 5"] : [SYNTH["Sun"]], # Laat 4 - Vers med playback bass
+    SCENE["Laat 4 - Scene 6"] : [SYNTH["Brass"]], # Laat 4 - Solo Bridge med playback bass
+    SCENE["Laat 4 - Scene 7"] : [SYNTH["Brass"]], # Laat 4 - Outro med playback bass
+    SCENE["Laat 5 - Scene 8"] : [SYNTH["Laat5Intro"]], # Laat 5 - Intro
+    SCENE["Laat 5 - Scene 9"] : [SYNTH["Bass"]], # Laat 5 - Refreng 
+    SCENE["Laat 5 - Scene 10"] : [SYNTH["Bass"], SYNTH["Laat5Intro"], SYNTH["Bass"], SYNTH["Sun"]], # Laat 5 - Bridge and out
+    SCENE["Laat 6 - Scene 11"] : [SYNTH["Blade"], SYNTH["OrgelBass"], SYNTH["Blade"], SYNTH["ArpBass"]], # Laat 6
+    SCENE["Laat 7 - Scene 12"] : [SYNTH["OrgelBass"]], # Laat 7
+    SCENE["Laat 8 - Scene 13"] : [SYNTH["OrgelBass"], SYNTH["ArpBass"]], # Laat 8
 }
 
 ####### MIDI KEYBOARD INFO ########
 ####### RUN "keyboard-test.py" TO FIND CORRECT VALUES ######## 
-SYNTH_NOTE = 68 #the note number of the button that triggers a new synth.
-SCENE_NOTE = 57 #the note number of the button that trigger the next scene.
+SYNTH_NOTE = 57 #the note number of the button that triggers a new synth.
+SCENE_NOTE = 68 #the note number of the button that trigger the next scene.
 
 VOLUME_NOTE = 7 #the note number of the dial that control the volume
 LOWPASS_NOTE = 10 #the note number of the dial that control the lowpass filtering

@@ -24,7 +24,7 @@ while True:
 
     if message[1] is config.SCENE_NOTE and message[2] is config.NOTE_ON:
         #turn off the synth
-        utils.synth_OFF(curr_synth, midi_out)
+        utils.synth_OFF(synth_trigger_note, curr_synth, midi_out)
         #increment the scene count
         curr_scene = utils.scene_increment(curr_scene)
         #change the scene in Ableton
@@ -36,7 +36,7 @@ while True:
         gen_prev_synth = utils.synth_INIT(synth_trigger_note, curr_scene)
         curr_synth = next(gen_curr_synth)
 
-        utils.synth_ON(curr_synth, midi_out)
+        utils.synth_ON(synth_trigger_note, curr_synth, midi_out)
 
         #Keep track of synth on-off. Essential when only having one synth in a scene
         track_keeper = deque([curr_synth, curr_synth], maxlen=2)
@@ -44,7 +44,7 @@ while True:
     elif message[1] is config.SYNTH_NOTE and message[2] is config.NOTE_ON:
         #Generate a new synth and turn it on
         curr_synth = next(gen_curr_synth)
-        utils.synth_ON(curr_synth, midi_out)
+        utils.synth_ON(synth_trigger_note, curr_synth, midi_out)
         #add curr_synth to tracker
         track_keeper.appendleft(curr_synth)
    
@@ -52,4 +52,4 @@ while True:
         if track_keeper[0] != track_keeper[1]:
             #generate the prev synth and turn it off.
             prev_synth = next(gen_prev_synth)
-            utils.synth_OFF(prev_synth, midi_out)
+            utils.synth_OFF(synth_trigger_note, prev_synth, midi_out)
