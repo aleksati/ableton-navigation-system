@@ -1,50 +1,50 @@
-SYNTH = {
-    "ArpBass": 1,
-    "Brass": 2,
-    "Bass": 3, 
-    "Laat5Intro": 4,
-    "Sun": 5,
-    "Blade": 6,
-    "OrgelBass": 7,
+SYNTHS = {
+    "ArpBass": 0,
+    "Brass": 1,
+    "Bass": 2, 
+    "Laat5Intro": 3,
+    "Sun": 4,
+    "Blade": 5,
+    "OrgelBass": 6,
 }
 
-SCENE = {
-    "Laat 1 - Scene 1" : 1,
-    "Laat 2 - Scene 2" : 2,
-    "Laat 3 - Scene 3" : 3,
-    "Laat 4 - Scene 4" : 4,
-    "Laat 4 - Scene 5" : 5, 
-    "Laat 4 - Scene 6" : 6,
-    "Laat 4 - Scene 7" : 7,
-    "Laat 5 - Scene 8" : 8,
-    "Laat 5 - Scene 9" : 9,
-    "Laat 5 - Scene 10" : 10,
-    "Laat 6 - Scene 11" : 11,
-    "Laat 7 - Scene 12" : 12, 
-    "Laat 8 - Scene 13" : 13, 
+SCENES = {
+    "Laat 1 - Scene 1" : 0,
+    "Laat 2 - Scene 2" : 1,
+    "Laat 3 - Scene 3" : 2,
+    "Laat 4 - Scene 4" : 3,
+    "Laat 4 - Scene 5" : 4, 
+    "Laat 4 - Scene 6" : 5,
+    "Laat 4 - Scene 7" : 6,
+    "Laat 5 - Scene 8" : 7,
+    "Laat 5 - Scene 9" : 8,
+    "Laat 5 - Scene 10" : 9,
+    "Laat 6 - Scene 11" : 10,
+    "Laat 7 - Scene 12" : 11, 
+    "Laat 8 - Scene 13" : 12, 
 }
 
-# scene : synths
 SCENE_CONFIG = {
-    SCENE["Laat 1 - Scene 1"] : [SYNTH["Bass"], SYNTH["ArpBass"]], # Laat 1
-    SCENE["Laat 2 - Scene 2"] : [SYNTH["Brass"], SYNTH["Bass"], SYNTH["Brass"], SYNTH["Bass"]], # Laat 2
-    SCENE["Laat 3 - Scene 3"] : [SYNTH["Brass"], SYNTH["Bass"], SYNTH["ArpBass"], SYNTH["Bass"]], # Laat 3
-    SCENE["Laat 4 - Scene 4"] : [SYNTH["Brass"]], # Laat 4 - Intro
-    SCENE["Laat 4 - Scene 5"] : [SYNTH["Sun"]], # Laat 4 - Vers med playback bass
-    SCENE["Laat 4 - Scene 6"] : [SYNTH["Brass"]], # Laat 4 - Solo Bridge med playback bass
-    SCENE["Laat 4 - Scene 7"] : [SYNTH["Brass"]], # Laat 4 - Outro med playback bass
-    SCENE["Laat 5 - Scene 8"] : [SYNTH["Laat5Intro"]], # Laat 5 - Intro
-    SCENE["Laat 5 - Scene 9"] : [SYNTH["Bass"]], # Laat 5 - Refreng 
-    SCENE["Laat 5 - Scene 10"] : [SYNTH["Bass"], SYNTH["Laat5Intro"], SYNTH["Bass"], SYNTH["Sun"]], # Laat 5 - Bridge and out
-    SCENE["Laat 6 - Scene 11"] : [SYNTH["Blade"], SYNTH["OrgelBass"], SYNTH["Blade"], SYNTH["ArpBass"]], # Laat 6
-    SCENE["Laat 7 - Scene 12"] : [SYNTH["OrgelBass"]], # Laat 7
-    SCENE["Laat 8 - Scene 13"] : [SYNTH["OrgelBass"], SYNTH["ArpBass"]], # Laat 8
+    SCENES["Laat 1 - Scene 1"] : [SYNTHS["Bass"], SYNTHS["ArpBass"]], # Laat 1
+    SCENES["Laat 2 - Scene 2"] : [SYNTHS["Brass"], SYNTHS["Bass"], SYNTHS["Brass"], SYNTHS["Bass"]], # Laat 2
+    SCENES["Laat 3 - Scene 3"] : [SYNTHS["Brass"], SYNTHS["Bass"], SYNTHS["ArpBass"], SYNTHS["Bass"]], # Laat 3
+    SCENES["Laat 4 - Scene 4"] : [SYNTHS["Brass"]], # Laat 4 - Intro
+    SCENES["Laat 4 - Scene 5"] : [SYNTHS["Sun"]], # Laat 4 - Vers med playback bass
+    SCENES["Laat 4 - Scene 6"] : [SYNTHS["Brass"]], # Laat 4 - Solo Bridge med playback bass
+    SCENES["Laat 4 - Scene 7"] : [SYNTHS["Brass"]], # Laat 4 - Outro med playback bass
+    SCENES["Laat 5 - Scene 8"] : [SYNTHS["Laat5Intro"]], # Laat 5 - Intro
+    SCENES["Laat 5 - Scene 9"] : [SYNTHS["Bass"]], # Laat 5 - Refreng 
+    SCENES["Laat 5 - Scene 10"] : [SYNTHS["Bass"], SYNTHS["Laat5Intro"], SYNTHS["Bass"], SYNTHS["Sun"]], # Laat 5 - Bridge and out
+    SCENES["Laat 6 - Scene 11"] : [SYNTHS["Blade"], SYNTHS["OrgelBass"], SYNTHS["Blade"], SYNTHS["ArpBass"]], # Laat 6
+    SCENES["Laat 7 - Scene 12"] : [SYNTHS["OrgelBass"]], # Laat 7
+    SCENES["Laat 8 - Scene 13"] : [SYNTHS["OrgelBass"], SYNTHS["ArpBass"]], # Laat 8
 }
 
 ####### MIDI KEYBOARD INFO ########
 ####### RUN "keyboard-test.py" TO FIND CORRECT VALUES ######## 
-SYNTH_NOTE = 57 #the note number of the button that triggers a new synth.
-SCENE_NOTE = 68 #the note number of the button that trigger the next scene.
+NEXT_SYNTH_NOTE = 68 #the note number of the button that triggers a new synthS.
+NEXT_SCENE_NOTE = 64 #the note number of the button that trigger the next scene.
+PREV_SCENE_NOTE = 57
 
 VOLUME_NOTE = 7 #the note number of the dial that control the volume
 LOWPASS_NOTE = 10 #the note number of the dial that control the lowpass filtering
@@ -53,7 +53,7 @@ REVERB_NOTE = 11 #the note number of the dial that controls the reverb amount
 START_NOTE = 66 #the note number of the button that toggles start
 STOP_NOTE = 65 #the note number of the button that toggles stop
 
-MIDI_CHAN = 176 #the MIDI channel of the buttons of the MIDI-keyboard, not the keys
+CTRL_MIDI_CHAN = 176 #the MIDI channel of the buttons of the MIDI-keyboard, not the keys
 NOTE_ON = 127 #the note-on MIDI value
 NOTE_OFF = 0 #the note-off MIDI value
 
