@@ -4,40 +4,43 @@ SYNTHS = {
     "Bass": 2, 
     "Laat5Intro": 3,
     "Sun": 4,
-    "Blade": 5,
-    "OrgelBass": 6,
+    "Sun2": 5,
+    "Blade": 6,
+    "OrgelBass": 7,
 }
 
 SCENES = {
     "Laat 1 - Scene 1" : 0,
-    "Laat 2 - Scene 2" : 1,
-    "Laat 3 - Scene 3" : 2,
-    "Laat 4 - Scene 4" : 3,
-    "Laat 4 - Scene 5" : 4, 
-    "Laat 4 - Scene 6" : 5,
+    "Laat 1 - Scene 2" : 1,
+    "Laat 2 - Scene 3" : 2,
+    "Laat 3 - Scene 4" : 3,
+    "Laat 4 - Scene 5" : 4,
+    "Laat 4 - Scene 6" : 5, 
     "Laat 4 - Scene 7" : 6,
-    "Laat 5 - Scene 8" : 7,
+    "Laat 4 - Scene 8" : 7,
     "Laat 5 - Scene 9" : 8,
     "Laat 5 - Scene 10" : 9,
-    "Laat 6 - Scene 11" : 10,
-    "Laat 7 - Scene 12" : 11, 
-    "Laat 8 - Scene 13" : 12, 
+    "Laat 5 - Scene 11" : 10,
+    "Laat 6 - Scene 12" : 11,
+    "Laat 7 - Scene 13" : 12, 
+    "Laat 8 - Scene 14" : 13, 
 }
 
 SCENE_CONFIG = {
-    SCENES["Laat 1 - Scene 1"] : [SYNTHS["Bass"], SYNTHS["ArpBass"]], # Laat 1
-    SCENES["Laat 2 - Scene 2"] : [SYNTHS["Brass"], SYNTHS["Bass"], SYNTHS["Brass"], SYNTHS["Bass"]], # Laat 2
-    SCENES["Laat 3 - Scene 3"] : [SYNTHS["Brass"], SYNTHS["Bass"], SYNTHS["ArpBass"], SYNTHS["Bass"]], # Laat 3
-    SCENES["Laat 4 - Scene 4"] : [SYNTHS["Brass"]], # Laat 4 - Intro
-    SCENES["Laat 4 - Scene 5"] : [SYNTHS["Sun"]], # Laat 4 - Vers med playback bass
-    SCENES["Laat 4 - Scene 6"] : [SYNTHS["Brass"]], # Laat 4 - Solo Bridge med playback bass
-    SCENES["Laat 4 - Scene 7"] : [SYNTHS["Brass"]], # Laat 4 - Outro med playback bass
-    SCENES["Laat 5 - Scene 8"] : [SYNTHS["Laat5Intro"]], # Laat 5 - Intro
-    SCENES["Laat 5 - Scene 9"] : [SYNTHS["Bass"]], # Laat 5 - Refreng 
-    SCENES["Laat 5 - Scene 10"] : [SYNTHS["Bass"], SYNTHS["Laat5Intro"], SYNTHS["Bass"], SYNTHS["Sun"]], # Laat 5 - Bridge and out
-    SCENES["Laat 6 - Scene 11"] : [SYNTHS["Blade"], SYNTHS["OrgelBass"], SYNTHS["Blade"], SYNTHS["ArpBass"]], # Laat 6
-    SCENES["Laat 7 - Scene 12"] : [SYNTHS["OrgelBass"]], # Laat 7
-    SCENES["Laat 8 - Scene 13"] : [SYNTHS["OrgelBass"], SYNTHS["ArpBass"]], # Laat 8
+    SCENES["Laat 1 - Scene 1"] : [SYNTHS["Bass"]], # Laat 1
+    SCENES["Laat 1 - Scene 2"] : [SYNTHS["Bass"]], # Laat 1 bridge og ut
+    SCENES["Laat 2 - Scene 3"] : [SYNTHS["Brass"], SYNTHS["Bass"], SYNTHS["Brass"], SYNTHS["Bass"]], # Laat 2
+    SCENES["Laat 3 - Scene 4"] : [SYNTHS["Brass"], SYNTHS["Bass"], SYNTHS["Laat5Intro"], SYNTHS["Bass"]], # Laat 3
+    SCENES["Laat 4 - Scene 5"] : [SYNTHS["Brass"]], # Laat 4 - Intro
+    SCENES["Laat 4 - Scene 6"] : [SYNTHS["Sun"]], # Laat 4 - Vers med playback bass
+    SCENES["Laat 4 - Scene 7"] : [SYNTHS["Brass"]], # Laat 4 - Solo Bridge med playback bass
+    SCENES["Laat 4 - Scene 8"] : [SYNTHS["Brass"]], # Laat 4 - Outro med playback bass
+    SCENES["Laat 5 - Scene 9"] : [SYNTHS["Laat5Intro"]], # Laat 5 - Intro
+    SCENES["Laat 5 - Scene 10"] : [SYNTHS["Laat5Intro"]], # Laat 5 - Refreng 
+    SCENES["Laat 5 - Scene 11"] : [SYNTHS["Laat5Intro"], SYNTHS["Sun2"]], # Laat 5 - Bridge and out
+    SCENES["Laat 6 - Scene 12"] : [SYNTHS["Blade"], SYNTHS["OrgelBass"], SYNTHS["Blade"], SYNTHS["ArpBass"]], # Laat 6
+    SCENES["Laat 7 - Scene 13"] : [SYNTHS["OrgelBass"]], # Laat 7
+    SCENES["Laat 8 - Scene 14"] : [SYNTHS["OrgelBass"], SYNTHS["ArpBass"]], # Laat 8
 }
 
 ####### MIDI KEYBOARD INFO ########

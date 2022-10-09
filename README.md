@@ -145,6 +145,11 @@ Config fully completed!
 
 When everything above is set, run _lets_go.py_. Remember to turn off all the speaker buttons (big yellow) beforehand.
 
-# Requirements
+# Dependencies
 
-collections.deque and rtmidi
+- Python3, with:
+  - collections from deque
+  - rtmidi
+- Virtual MIDI driver
+- USB MIDI keyboard
+- DAW (Ableton Live 11)
