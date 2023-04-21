@@ -1,12 +1,11 @@
 SYNTHS = {
-    "ArpBass": 0,
-    "Brass": 1,
-    "Bass": 2,
-    "Laat5Intro": 3,
-    "Sun": 4,
-    "Sun2": 5,
-    "Blade": 6,
-    "OrgelBass": 7,
+    "Brass": 0,
+    "Bass": 1,
+    "Laat5Intro": 2,
+    "Sun": 3,
+    "Sun2": 4,
+    "Blade": 5,
+    "OrgelBass": 6,
 }
 
 SCENES = {
@@ -20,9 +19,11 @@ SCENES = {
     "Laat 4 - vers->out": 7,
     "Laat 5 - intro": 8,
     "Laat 5 - ref->out": 9,
-    "Laat 6 - hele": 10,
-    "Laat 7 - hele": 11,
-    "Laat 8 - hele": 12,
+    "Laat 6 - til bridge": 10,
+    "Laat 6 - bridge->out": 11,
+    "Laat 7 - hele": 12,
+    "Laat 8 - til vers2": 13,
+    "Laat 8 - vers2->out": 14,
 }
 
 SCENE_CONFIG = {
@@ -36,9 +37,11 @@ SCENE_CONFIG = {
     SCENES["Laat 4 - vers->out"]: [SYNTHS["Sun"], SYNTHS["Brass"]],
     SCENES["Laat 5 - intro"]: [SYNTHS["Laat5Intro"]],
     SCENES["Laat 5 - ref->out"]: [SYNTHS["Laat5Intro"], SYNTHS["Sun2"]],
-    SCENES["Laat 6 - hele"]: [SYNTHS["Blade"], SYNTHS["OrgelBass"], SYNTHS["Blade"], SYNTHS["ArpBass"]],
+    SCENES["Laat 6 - til bridge"]: [SYNTHS["Blade"], SYNTHS["OrgelBass"], SYNTHS["Blade"]],
+    SCENES["Laat 6 - bridge->out"]: [SYNTHS["Blade"]],
     SCENES["Laat 7 - hele"]: [SYNTHS["OrgelBass"]],
-    SCENES["Laat 8 - hele"]: [SYNTHS["OrgelBass"], SYNTHS["ArpBass"]],
+    SCENES["Laat 8 - til vers2"]: [SYNTHS["OrgelBass"]],
+    SCENES["Laat 8 - vers2->out"]: [SYNTHS["OrgelBass"]],
 }
 
 ####### MIDI KEYBOARD INFO ########
